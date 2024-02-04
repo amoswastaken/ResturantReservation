@@ -1,0 +1,100 @@
+﻿@page "/locations/"
+@inject HttpClient _client
+@inject IJSRuntime js
+@attribute [Authorize]
+
+<h3 class="card-title">Types of Location</h3>
+<br />
+
+<a href="/locations/create" class="btn btn-secondary">
+    <span class="oi oi-plus"></span>
+    Create New Locations
+</a>
+<br />
+<br />
+
+<input type="text" @bind="searchTerm" placeholder="Search by Name" class="form-control mb-2" />
+
+@if (Locations == null)
+{
+    <div class="alert alert-info">Loading Locations...</div>
+}
+else
+{
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Locations.Any(c => string.IsNullOrEmpty(searchTerm) || c.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)))
+            {
+                foreach (var location in Locations.Where(c => string.IsNullOrEmpty(searchTerm) || c.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)))
+                {
+                    <tr>
+                        <td>@location.Name</td>
+
+                        <td>
+                            @if (!string.IsNullOrEmpty(location.Image))
+                            {
+                                <img src="@($"data:image/png;base64,{location.Image}")" alt="Location Image" style="max-width: 200px; max-height: 200px; object-fit: cover;" />
+                            }
+                            else
+                            {
+                                <p>No image available</p>
+                            }
+                        </td>
+
+                        <td>
+                            <a href="/locations/view/@location.Id" class="btn btn-primary">
+                                <span class="oi oi-book"></span>
+                            </a>
+                            <a href="/locations/edit/@location.Id" class="btn btn-warning">
+                                <span class="oi oi-pencil"></span>
+                            </a>
+                            <button class="btn btn-danger" @onclick="@(()=>Delete(location.Id))">
+                                <span class="oi oi-delete"></span>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3">No matches found for "@searchTerm".</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<br />
+
+@code {
+    private List<Location>? Locations;
+    private string searchTerm = string.Empty;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Locations = await _client.GetFromJsonAsync<List<Location>>($"{Endpoints.LocationsEndpoint}");
+    }
+
+    async Task Delete(int locationId)
+    {
+        if (Locations != null)
+        {
+            var location = Locations.FirstOrDefault(q => q.Id == locationId);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {location.Name}?");
+            if (confirm)
+            {
+                await _client.DeleteAsync($"{Endpoints.LocationsEndpoint}/{locationId}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+
+}

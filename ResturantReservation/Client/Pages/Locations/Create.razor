@@ -1,0 +1,76 @@
+﻿@page "/locations/create/"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+
+<h3 class="card-title">Create New Locations</h3>
+<hr />
+<br />
+
+<EditForm Model="@location" OnValidSubmit="CreateLocation">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group">
+        <label>Name: </label>
+        <div>
+            <InputText @bind-Value="@location.Name" class="form-control" />
+            <ValidationMessage For="@(() => location.Name)" />
+        </div>
+    </div>
+    <br />
+      
+    <div class="form-group">
+        <label>Image: </label>
+        <div>
+            <InputFile OnChange="HandleFileSelected" class="form-control" accept=".jpg, .jpeg, .png" />
+            @if (file != null && file.Size > 512000)
+            {
+                <p class="text-danger">File size exceeds the maximum allowed size (512 KB).</p>
+            }
+            <ValidationMessage For="@(() => location.Image)" />
+        </div>
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-primary btn-block">
+        Create Location
+    </button>
+    <br />
+    <br />
+    <BackToList Target="locations" />
+</EditForm>
+
+@code {
+    Location location = new Location();
+    private IBrowserFile file;
+    private bool IsFileTooLarge => file != null && file.Size > 512000;
+
+    private async Task CreateLocation()
+    {
+        if (IsFileTooLarge)
+        {
+            // Display a message or handle accordingly
+            return;
+        }
+
+        if (file != null)
+        {
+            location.ImageFileName = file.Name; // Set the file name property
+            using (var stream = file.OpenReadStream())
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await stream.CopyToAsync(memoryStream);
+                    location.Image = Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
+        }
+
+        await _client.PostAsJsonAsync(Endpoints.LocationsEndpoint, location);
+        _navManager.NavigateTo("/locations");
+    }
+    private void HandleFileSelected(InputFileChangeEventArgs e)
+    {
+        file = e.File;
+    }
+}

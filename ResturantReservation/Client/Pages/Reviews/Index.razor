@@ -1,0 +1,89 @@
+﻿@page "/reviews/"
+@inject HttpClient _client
+@inject IJSRuntime js
+@attribute [Authorize]
+
+<h3 class="card-title">Reviews</h3>
+<br />
+
+<a href="/reviews/create" class="btn btn-secondary">
+    <span class="oi oi-plus"></span>
+    Create New Review
+</a>
+<br />
+<br />
+
+@if (Reviews == null)
+{
+    <div class="alert alert-info">Loading Reviews...</div>
+}
+else
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Rating</th>
+                <th>Content</th>
+                <th>Restaurant</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var review in Reviews)
+            {
+                <tr>
+                    <td>@(review.Customer?.FirstName ?? "N/A") @(review.Customer?.LastName ?? "")</td>
+                    <td>@(review.Score.HasValue ? review.Score.ToString() : "N/A")</td>
+                    <td>@(review.Content ?? "N/A")</td>
+                    <td>@(review.Restaurant?.Name ?? "N/A")</td>
+
+                    <td>
+                        <a href="/cuisines/view/@review.Id" class="btn btn-primary">
+                            <span class="oi oi-book"></span>
+                        </a>
+                        <a href="/cuisines/edit/@review.Id" class="btn btn-warning">
+                            <span class="oi oi-pencil"></span>
+                        </a>
+                        <button class="btn btn-danger" @onclick="@(()=>Delete(review.Id))">
+                            <span class="oi oi-delete"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<br />
+
+@code {
+    private List<Review>? Reviews;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            Reviews = await _client.GetFromJsonAsync<List<Review>>($"{Endpoints.ReviewsEndpoint}");
+        }
+        catch (Exception ex)
+        {
+            // Handle the exception, log, or display an error message
+            Console.WriteLine($"Error loading reviews: {ex.Message}");
+        }
+    }
+
+    async Task Delete(int reviewId)
+    {
+        if (Reviews != null)
+        {
+            var review = Reviews.FirstOrDefault(q => q.Id == reviewId);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {review.Content}?");
+            if (confirm)
+            {
+                await _client.DeleteAsync($"{Endpoints.ReviewsEndpoint}/{reviewId}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+}

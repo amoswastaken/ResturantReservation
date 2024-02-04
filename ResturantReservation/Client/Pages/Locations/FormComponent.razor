@@ -1,0 +1,70 @@
+﻿
+<EditForm Model="@location" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group">
+        <label>Name: </label>
+        <div>
+            <InputText @bind-Value="@location.Name" class="form-control" />
+            <ValidationMessage For="@(() => location.Name)" />
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        <label>Image: </label>
+        <div>
+            <InputFile OnChange="HandleFileSelected" class="form-control" />
+            <ValidationMessage For="@(() => location.Image)" />
+        </div>
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-success btn-block">
+        @ButtonText
+    </button>
+</EditForm>
+
+@code {
+    [Inject] public HttpClient _client { get; set; }
+
+    [Parameter] public Location? location { get; set; }
+    [Parameter] public string ButtonText { get; set; } = "Save";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public bool EditMode { get; set; } = false;
+
+    private IBrowserFile file;
+
+    private void HandleFileSelected(InputFileChangeEventArgs e)
+    {
+        file = e.File;
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (EditMode)
+        {
+            // Fetch the existing location details (excluding the image) when in edit mode
+            location = await _client.GetFromJsonAsync<Location>($"{Endpoints.LocationsEndpoint}/{location.Id}");
+        }
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        if (file != null)
+        {
+            location.ImageFileName = file.Name;
+            using (var stream = file.OpenReadStream())
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await stream.CopyToAsync(memoryStream);
+                    location.Image = Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
+        }
+
+        // Send the updated location details to the parent component
+        await OnValidSubmit.InvokeAsync();
+    }
+}

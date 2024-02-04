@@ -1,0 +1,87 @@
+﻿@page "/diets/"
+@inject HttpClient _client
+@inject IJSRuntime js
+@attribute [Authorize]
+
+<h3 class="card-title">Types of Diet</h3>
+<br />
+
+<a href="/diets/create" class="btn btn-secondary">
+    <span class="oi oi-plus"></span>
+    Create New Diets
+</a>
+<br />
+<br />
+
+<input type="text" @bind="searchTerm" placeholder="Search by Name" class="form-control mb-2" />
+
+@if (Diets == null)
+{
+    <div class="alert alert-info">Loading Diets...</div>
+}
+else
+{
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Diets.Any(c => string.IsNullOrEmpty(searchTerm) || c.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)))
+            {
+                foreach (var diet in Diets.Where(c => string.IsNullOrEmpty(searchTerm) || c.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)))
+                {
+                    <tr>
+                        <td>@diet.Name</td>
+                        <td>
+                            <a href="/diets/view/@diet.Id" class="btn btn-primary">
+                                <span class="oi oi-book"></span>
+                            </a>
+                            <a href="/diets/edit/@diet.Id" class="btn btn-warning">
+                                <span class="oi oi-pencil"></span>
+                            </a>
+                            <button class="btn btn-danger" @onclick="@(()=>Delete(diet.Id))">
+                                <span class="oi oi-delete"></span>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            }
+
+            else
+            {
+                <tr>
+                    <td colspan="3">No matches found for "@searchTerm".</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<br />
+
+@code {
+    private List<Diet>? Diets;
+    private string searchTerm = string.Empty;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Diets = await _client.GetFromJsonAsync<List<Diet>>($"{Endpoints.DietsEndpoint}");
+    }
+
+    async Task Delete(int dietId)
+    {
+        if (Diets != null)
+        {
+            var diet = Diets.First(q => q.Id == dietId);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {diet.Name}?");
+            if (confirm)
+            {
+                await _client.DeleteAsync($"{Endpoints.DietsEndpoint}/{dietId}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+﻿
+<EditForm Model="@cuisine" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group">
+        <label>Name: </label>
+        <div>
+            <InputText @bind-Value="@cuisine.Name" class="form-control" />
+            <ValidationMessage For="@(() => cuisine.Name)" />
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        <label>Image: </label>
+        <div>
+            <InputFile OnChange="HandleFileSelected" class="form-control" />
+            <ValidationMessage For="@(() => cuisine.Image)" />
+        </div>
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-success btn-block">
+        @ButtonText
+    </button>
+</EditForm>
+
+@code {
+    [Inject] public HttpClient _client { get; set; }
+
+    [Parameter] public Cuisine? cuisine { get; set; }
+    [Parameter] public string ButtonText { get; set; } = "Save";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public bool EditMode { get; set; } = false;
+
+    private IBrowserFile file;
+
+    private void HandleFileSelected(InputFileChangeEventArgs e)
+    {
+        file = e.File;
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (EditMode)
+        {
+            // Fetch the existing cuisine details (excluding the image) when in edit mode
+            cuisine = await _client.GetFromJsonAsync<Cuisine>($"{Endpoints.CuisinesEndpoint}/{cuisine.Id}");
+        }
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        if (file != null)
+        {
+            cuisine.ImageFileName = file.Name;
+            using (var stream = file.OpenReadStream())
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await stream.CopyToAsync(memoryStream);
+                    cuisine.Image = Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
+        }
+
+        // Send the updated cuisine details to the parent component
+        await OnValidSubmit.InvokeAsync();
+    }
+}

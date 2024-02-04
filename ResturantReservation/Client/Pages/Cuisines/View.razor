@@ -1,0 +1,78 @@
+﻿@page "/cuisines/view/{Id}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<h3 class="card-title">View Cuisine Details</h3>
+<hr />
+<br />
+
+<style>
+    .cuisine-image {
+        max-width: 50%;
+        height: auto;
+    }
+</style>
+
+
+@if (cuisine != null)
+{
+    <dl class="row">
+        <dt class="col-sm-2">Id:</dt>
+        <dd class="col-sm-10">@cuisine.Id</dd>
+
+        <dt class="col-sm-2">Name:</dt>
+        <dd class="col-sm-10">@cuisine.Name</dd>
+
+        <dd class="col-sm-10">
+            @if (!string.IsNullOrEmpty(cuisine.Image))
+            {
+                <img class="cuisine-image" src="@($"data:image/png;base64,{cuisine.Image}")" alt="Cuisine Image" />
+                <br/>
+                @cuisine.ImageFileName
+            }
+            else
+            {
+                <p>No image available</p>
+            }
+        </dd>
+
+    </dl>
+}
+else
+{
+    <p>Loading...</p>
+}
+
+<button class="btn btn-primary" @onclick="GoBack">Back to List</button>
+
+@code {
+    Cuisine cuisine;
+
+    [Parameter]
+    public string Id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadCuisineDetails();
+    }
+
+    private async Task LoadCuisineDetails()
+    {
+        var response = await _client.GetFromJsonAsync<Cuisine>($"{Endpoints.CuisinesEndpoint}/{Id}");
+
+        if (response != null)
+        {
+            cuisine = response;
+        }
+        else
+        {
+            // Handle error or redirect to a not-found page
+            _navManager.NavigateTo("/not-found");
+        }
+    }
+
+    private void GoBack()
+    {
+        _navManager.NavigateTo("/cuisines");
+    }
+}

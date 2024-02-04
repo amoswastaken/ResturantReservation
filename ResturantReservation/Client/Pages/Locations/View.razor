@@ -1,0 +1,78 @@
+﻿@page "/locations/view/{Id}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<h3 class="card-title">View Location Details</h3>
+<hr />
+<br />
+
+<style>
+    .location-image {
+        max-width: 50%;
+        height: auto;
+    }
+</style>
+
+
+@if (location != null)
+{
+    <dl class="row">
+        <dt class="col-sm-2">Id:</dt>
+        <dd class="col-sm-10">@location.Id</dd>
+
+        <dt class="col-sm-2">Name:</dt>
+        <dd class="col-sm-10">@location.Name</dd>
+
+        <dd class="col-sm-10">
+            @if (!string.IsNullOrEmpty(location.Image))
+            {
+                <img class="location-image" src="@($"data:image/png;base64,{location.Image}")" alt="Location Image" />
+                <br/>
+                @location.ImageFileName
+            }
+            else
+            {
+                <p>No image available</p>
+            }
+        </dd>
+
+    </dl>
+}
+else
+{
+    <p>Loading...</p>
+}
+
+<button class="btn btn-primary" @onclick="GoBack">Back to List</button>
+
+@code {
+    Location location;
+
+    [Parameter]
+    public string Id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadLocationDetails();
+    }
+
+    private async Task LoadLocationDetails()
+    {
+        var response = await _client.GetFromJsonAsync<Location>($"{Endpoints.LocationsEndpoint}/{Id}");
+
+        if (response != null)
+        {
+            location = response;
+        }
+        else
+        {
+            // Handle error or redirect to a not-found page
+            _navManager.NavigateTo("/not-found");
+        }
+    }
+
+    private void GoBack()
+    {
+        _navManager.NavigateTo("/locations");
+    }
+}

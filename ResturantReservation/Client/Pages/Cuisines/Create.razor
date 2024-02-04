@@ -1,0 +1,76 @@
+﻿@page "/cuisines/create/"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+
+<h3 class="card-title">Create New Cuisines</h3>
+<hr />
+<br />
+
+<EditForm Model="@cuisine" OnValidSubmit="CreateCuisine">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group">
+        <label>Name: </label>
+        <div>
+            <InputText @bind-Value="@cuisine.Name" class="form-control" />
+            <ValidationMessage For="@(() => cuisine.Name)" />
+        </div>
+    </div>
+    <br />
+      
+    <div class="form-group">
+        <label>Image: </label>
+        <div>
+            <InputFile OnChange="HandleFileSelected" class="form-control" accept=".jpg, .jpeg, .png" />
+            @if (file != null && file.Size > 512000)
+            {
+                <p class="text-danger">File size exceeds the maximum allowed size (512 KB).</p>
+            }
+            <ValidationMessage For="@(() => cuisine.Image)" />
+        </div>
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-primary btn-block">
+        Create Cuisine
+    </button>
+    <br />
+    <br />
+    <BackToList Target="cuisines" />
+</EditForm>
+
+@code {
+    Cuisine cuisine = new Cuisine();
+    private IBrowserFile file;
+    private bool IsFileTooLarge => file != null && file.Size > 512000;
+
+    private async Task CreateCuisine()
+    {
+        if (IsFileTooLarge)
+        {
+            // Display a message or handle accordingly
+            return;
+        }
+
+        if (file != null)
+        {
+            cuisine.ImageFileName = file.Name; // Set the file name property
+            using (var stream = file.OpenReadStream())
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await stream.CopyToAsync(memoryStream);
+                    cuisine.Image = Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
+        }
+
+        await _client.PostAsJsonAsync(Endpoints.CuisinesEndpoint, cuisine);
+        _navManager.NavigateTo("/cuisines");
+    }
+    private void HandleFileSelected(InputFileChangeEventArgs e)
+    {
+        file = e.File;
+    }
+}

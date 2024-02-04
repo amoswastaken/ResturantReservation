@@ -1,0 +1,23 @@
+C:\Users\sprin\source\repos\ResturantReservation\ResturantReservation\Shared\bin\Debug\net7.0\ResturantReservation.Shared.deps.json
+C:\Users\sprin\source\repos\ResturantReservation\ResturantReservation\Shared\bin\Debug\net7.0\ResturantReservation.Shared.dll
+C:\Users\sprin\source\repos\ResturantReservation\ResturantReservation\Shared\bin\Debug\net7.0\ResturantReservation.Shared.pdb
+C:\Users\sprin\source\repos\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\ResturantReservation.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sprin\source\repos\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\ResturantReservation.Shared.AssemblyInfoInputs.cache
+C:\Users\sprin\source\repos\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\ResturantReservation.Shared.AssemblyInfo.cs
+C:\Users\sprin\source\repos\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\ResturantReservation.Shared.csproj.CoreCompileInputs.cache
+C:\Users\sprin\source\repos\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\ResturantReservation.Shared.dll
+C:\Users\sprin\source\repos\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\refint\ResturantReservation.Shared.dll
+C:\Users\sprin\source\repos\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\ResturantReservation.Shared.pdb
+C:\Users\sprin\source\repos\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\ref\ResturantReservation.Shared.dll
+C:\Users\sprin\source\repos\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\ResturantReservation.Shared.sourcelink.json
+C:\Users\amoss\Desktop\Files\TP\year 2\sem 2\FULLSD\Project #1\ResturantReservation\ResturantReservation\Shared\bin\Debug\net7.0\ResturantReservation.Shared.deps.json
+C:\Users\amoss\Desktop\Files\TP\year 2\sem 2\FULLSD\Project #1\ResturantReservation\ResturantReservation\Shared\bin\Debug\net7.0\ResturantReservation.Shared.dll
+C:\Users\amoss\Desktop\Files\TP\year 2\sem 2\FULLSD\Project #1\ResturantReservation\ResturantReservation\Shared\bin\Debug\net7.0\ResturantReservation.Shared.pdb
+C:\Users\amoss\Desktop\Files\TP\year 2\sem 2\FULLSD\Project #1\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\ResturantReservation.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amoss\Desktop\Files\TP\year 2\sem 2\FULLSD\Project #1\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\ResturantReservation.Shared.AssemblyInfoInputs.cache
+C:\Users\amoss\Desktop\Files\TP\year 2\sem 2\FULLSD\Project #1\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\ResturantReservation.Shared.AssemblyInfo.cs
+C:\Users\amoss\Desktop\Files\TP\year 2\sem 2\FULLSD\Project #1\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\ResturantReservation.Shared.csproj.CoreCompileInputs.cache
+C:\Users\amoss\Desktop\Files\TP\year 2\sem 2\FULLSD\Project #1\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\ResturantReservation.Shared.dll
+C:\Users\amoss\Desktop\Files\TP\year 2\sem 2\FULLSD\Project #1\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\refint\ResturantReservation.Shared.dll
+C:\Users\amoss\Desktop\Files\TP\year 2\sem 2\FULLSD\Project #1\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\ResturantReservation.Shared.pdb
+C:\Users\amoss\Desktop\Files\TP\year 2\sem 2\FULLSD\Project #1\ResturantReservation\ResturantReservation\Shared\obj\Debug\net7.0\ref\ResturantReservation.Shared.dll

@@ -1,0 +1,34 @@
+@page "/cuisines/create/"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<h3 class="card-title">Create New Cuisines</h3>
+<hr />
+<br />
+
+<EditForm Model="@cuisine" OnValidSubmit="CreateDiet">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group">
+        <label>Name: </label>
+        <div>
+            <InputText @bind-Value="@cuisine.Name" class="form-control" />
+            <ValidationMessage For="@(() => cuisine.Name)" />
+        </div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success btn-block">
+        Create Cuisine
+    </button>
+    <BackToList Target="cuisines" />
+</EditForm>
+
+@code {
+    Cuisine cuisine = new Cuisine();
+
+    private async Task CreateDiet()
+    {
+        await _client.PostAsJsonAsync(Endpoints.CuisinesEndpoint, cuisine);
+        _navManager.NavigateTo("/cuisines");
+    }
+}

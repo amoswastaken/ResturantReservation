@@ -1,0 +1,193 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = ResturantReservation.Client
+build_property.RootNamespace = ResturantReservation.Client
+build_property.ProjectDir = C:\Users\amoss\Desktop\Files\TP\year 2\sem 2\FULLSD\Project #1\ResturantReservation\ResturantReservation\Client\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\amoss\Desktop\Files\TP\year 2\sem 2\FULLSD\Project #1\ResturantReservation\ResturantReservation\Client
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Components/BackToList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xCYWNrVG9MaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Authentication.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Cuisines/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3Vpc2luZXNcQ3JlYXRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Cuisines/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3Vpc2luZXNcRWRpdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Cuisines/FormComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3Vpc2luZXNcRm9ybUNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Cuisines/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3Vpc2luZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Cuisines/View.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3Vpc2luZXNcVmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Customers/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXENyZWF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Customers/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXEVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Customers/FormComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXEZvcm1Db21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Customers/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXEluZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Diets/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlldHNcQ3JlYXRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Diets/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlldHNcRWRpdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Diets/FormComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlldHNcRm9ybUNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Diets/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlldHNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Locations/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9jYXRpb25zXENyZWF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Locations/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9jYXRpb25zXEVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Locations/FormComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9jYXRpb25zXEZvcm1Db21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Locations/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9jYXRpb25zXEluZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Locations/View.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9jYXRpb25zXFZpZXcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Reservations/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXENyZWF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Reservations/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXEVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Reservations/FormComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXEZvcm1Db21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Reservations/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXEluZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Reservations/View.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXFZpZXcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Restaurants/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdGF1cmFudHNcQ3JlYXRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Restaurants/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdGF1cmFudHNcRWRpdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Restaurants/FormComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdGF1cmFudHNcRm9ybUNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Restaurants/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdGF1cmFudHNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Restaurants/View.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdGF1cmFudHNcVmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Reviews/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2aWV3c1xDcmVhdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Reviews/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2aWV3c1xFZGl0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Reviews/FormComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2aWV3c1xGb3JtQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Pages/Reviews/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2aWV3c1xJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Shared/LoginDisplay.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luRGlzcGxheS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Shared/RedirectToLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFJlZGlyZWN0VG9Mb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-mzl6neow7d
+
+[C:/Users/amoss/Desktop/Files/TP/year 2/sem 2/FULLSD/Project \#1/ResturantReservation/ResturantReservation/Client/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-nsal84jqop
